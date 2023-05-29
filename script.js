@@ -1,7 +1,10 @@
 //your JS code here. If required.
-let h1=document.getElementsByTagName("h1")[0];
+function updateWindowSize() {
+        var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        var dimensionsElement = document.getElementById('dimensions');
+        dimensionsElement.textContent = 'Width: ' + width + ' Height: ' + height;
+      }
 
-let width=window.innerWidth;
-let height=window.innerHeight;
-
-h1.innerText="Width:" +this.innerWidth+" and Height: "+this.innerHeight;
+      window.addEventListener('resize', updateWindowSize);
+      updateWindowSize(); // Initial update when the page loads
